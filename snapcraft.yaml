@@ -47,7 +47,7 @@ parts:
     plugin: dump
     source: ./bin/${SNAPCRAFT_ARCH_TRIPLET}
     organize:
-      main: bin/Qml4RTSP
+      Qml4RTSP: bin/Qml4RTSP
       
   run-scripts:
     plugin: dump
@@ -81,6 +81,6 @@ parts:
   mir-kiosk-snap-launch:
     plugin: dump
     source: https://github.com/MirServer/mir-kiosk-snap-launch.git
-    override-build:  $SNAPCRAFT_PART_BUILD/build-with-plugs.sh opengl wayland network #raw-usb removable-media hardware-observe mount-observe
+    override-build:  $SNAPCRAFT_PART_BUILD/build-with-plugs.sh opengl wayland network
     stage-packages:
       - inotify-tools
