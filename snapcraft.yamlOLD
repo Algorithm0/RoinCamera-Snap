@@ -17,7 +17,9 @@ apps:
     plugs:
       -  opengl
       -  wayland
-      -  network
+      -  network     
+    #  -  raw-usb
+    #  -  removable-media
 
   roin-video:
     command-chain:
@@ -27,6 +29,28 @@ apps:
       -  opengl
       -  wayland
       -  network
+      # -  raw-usb
+      # -  removable-media
+
+  # udisksd:
+  #   command: usr/lib/udisks2/udisksd
+  #   daemon: simple
+  #   slots:
+  #     - service
+  #   plugs:
+  #     - hardware-observe
+  #     - mount-observe
+  # automount:
+  #   command: bin/automount
+  #   daemon: simple
+  #   after:
+  #     - udisksd
+  #   plugs:
+  #     - client
+  # udiskctl:
+  #   command: bin/udiskctl.sh
+  #   plugs:
+  #     - client
 
 
 slots:
@@ -40,6 +64,12 @@ plugs:
 layout:
   /usr/share/X11/locale:
     bind: $SNAP/usr/share/X11/locale
+  # /etc/udisks2/udisks2.conf:
+  #   bind-file: $SNAP/etc/udisks2/udisks2.conf
+  # /etc/libblockdev/conf.d:
+  #   bind: $SNAP/etc/libblockdev/conf.d
+  # /var/lib/udisks2:
+  #   bind: $SNAP_DATA/var/lib/udisks2
      
 
 environment:
@@ -62,6 +92,8 @@ parts:
     source: ./bin/general
     organize:
       run.sh: bin/run.sh
+      # automount: bin/automount
+      # udiskctl.sh: bin/udiskctl.sh
             
   mesa:
     plugin: nil
@@ -70,18 +102,25 @@ parts:
       - libgles2
       - libgles2-mesa
       - ubuntu-restricted-extras
+      # - udisks2
       #qt5     
       - qt5-default
       - qtdeclarative5-dev
       - libqt5multimedia-plugins
       - qml-module-qtmultimedia
+      # - qml-module-qtquick-controls
+      # - qml-module-qtquick-controls2
       - qtwayland5
+      # - qml-module-qtquick-extras
+      # - qml-module-qt-labs-settings
 
   get-run-rules:
     plugin: nil
     override-prime: |
       chmod +x $SNAPCRAFT_PRIME/bin/Qml4RTSP
       chmod +x $SNAPCRAFT_PRIME/bin/run.sh
+#      chmod +x $SNAPCRAFT_PRIME/bin/automount
+#      chmod +x $SNAPCRAFT_PRIME/bin/udiskctl.sh
     after:
       - myprog
       - run-scripts
