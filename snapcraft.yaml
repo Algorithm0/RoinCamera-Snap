@@ -65,7 +65,7 @@ parts:
       #qt5     
       - qt5-default
       - qtdeclarative5-dev
-      - libqt5multimedia-plugins
+      - libqt5multimedia5-plugins
       - qml-module-qtmultimedia
       - qtwayland5
 
