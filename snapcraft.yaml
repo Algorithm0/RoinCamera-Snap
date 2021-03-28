@@ -1,5 +1,5 @@
 name: roin-video
-version: '0.1'
+version: '0.2'
 summary: Remote control Roin video
 description: Allows you to remotely watch video from the Roin through the control cabinet
 base: core20
@@ -27,6 +27,11 @@ apps:
       -  opengl
       -  wayland
       -  network
+
+  nano:
+    command-chain:
+      - bin/nano
+    command: bin/run.sh
 
 
 layout:
@@ -63,6 +68,7 @@ parts:
       - libgles2-mesa
       - ubuntu-restricted-extras
       - libpulse0
+      - nano
       #qt5     
       - qt5-default
       - qtdeclarative5-dev
