@@ -36,6 +36,9 @@ apps:
       -  network
       -  read-config
 
+  nano:
+    command: bin/nano
+
 
 layout:
   /usr/share/X11/locale:
