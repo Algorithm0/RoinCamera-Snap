@@ -1,5 +1,5 @@
 name: roin-video
-version: '0.3'
+version: '0.4'
 summary: Remote control Roin video
 description: Allows you to remotely watch video from the Roin through the control cabinet
 base: core20
@@ -27,9 +27,6 @@ apps:
       -  opengl
       -  wayland
       -  network
-
-  pinano:
-    command: bin/nano
 
 
 layout:
@@ -72,6 +69,7 @@ parts:
       #qt5     
       - qt5-default
       - qtdeclarative5-dev
+      - qml-module-qtquick-window2
       - libqt5multimedia5-plugins
       - qml-module-qtmultimedia
       - qtwayland5
