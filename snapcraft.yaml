@@ -62,6 +62,7 @@ parts:
       - libgles2
       - libgles2-mesa
       - ubuntu-restricted-extras
+      - libpulse0
       #qt5     
       - qt5-default
       - qtdeclarative5-dev
