@@ -5,6 +5,9 @@ description: Allows you to remotely watch video from the Roin through the contro
 base: core20
 confinement: strict
 grade: stable
+architectures:
+  - build-on: amd64
+  - build-on: arm64
 
 plugs:
   dot-config-roin:
