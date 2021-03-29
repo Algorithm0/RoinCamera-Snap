@@ -1,5 +1,5 @@
 name: roin-video
-version: '0.11'
+version: '0.12'
 summary: Remote control Roin video
 description: Allows you to remotely watch video from the Roin through the control cabinet
 base: core20
@@ -85,7 +85,11 @@ parts:
       - ubuntu-restricted-extras
       - libpulse0
       - nano
+      #gsteamer
       - gstreamer1.0-rtsp
+      - gstreamer1.0-plugins-base
+      - gstreamer1.0-qt5
+      - gstreamer1.0-pulseaudio
       #qt5     
       - qt5-default
       - qtdeclarative5-dev
