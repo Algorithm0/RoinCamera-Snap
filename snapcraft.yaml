@@ -86,7 +86,7 @@ parts:
       - libwayland-egl1-mesa
       - libgles2
       - libgles2-mesa
-      - ubuntu-restricted-extras
+      #- ubuntu-restricted-extras
       - libpulse0
       - freeglut3
       - nano
