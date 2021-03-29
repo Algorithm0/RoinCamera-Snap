@@ -1,5 +1,5 @@
 name: roin-video
-version: '0.80'
+version: '0.81'
 summary: Remote control Roin video
 description: Allows you to remotely watch video from the Roin through the control cabinet
 base: core20
@@ -92,10 +92,10 @@ parts:
       - nano
       #gsteamer
       - gstreamer1.0-rtsp
+      - gstreamer1.0-plugins-bad
       # - gstreamer1.0-plugins-base
       # - gstreamer1.0-qt5
       # - gstreamer1.0-pulseaudio
-      # - gstreamer1.0-plugins-bad
       # - gstreamer1.0-gtk3
       # - gstreamer1.0-libav
       # - gstreamer1.0-plugins-bad-videoparsers
