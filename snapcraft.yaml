@@ -1,5 +1,5 @@
 name: roin-video
-version: '0.14'
+version: '0.15'
 summary: Remote control Roin video
 description: Allows you to remotely watch video from the Roin through the control cabinet
 base: core20
@@ -49,10 +49,20 @@ apps:
 
 
 layout:
-  /usr/share/X11/locale:
-    bind: $SNAP/usr/share/X11/locale
-  /usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/pulseaudio:
-    bind: $SNAP/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/pulseaudio
+    /bin:
+      bind: $SNAP/bin
+    /etc:
+      bind: $SNAP/etc
+    /lib:
+      bind: $SNAP/lib
+    /meta:
+      bind: $SNAP/meta
+    /usr:
+      bind: $SNAP/usr
+  # /usr/share/X11/locale:
+  #   bind: $SNAP/usr/share/X11/locale
+  # /usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/pulseaudio:
+  #   bind: $SNAP/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/pulseaudio
      
 
 environment:
