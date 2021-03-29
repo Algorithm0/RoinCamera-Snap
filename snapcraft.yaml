@@ -1,16 +1,10 @@
 name: roin-video
-version: '0.6'
+version: '0.7'
 summary: Remote control Roin video
 description: Allows you to remotely watch video from the Roin through the control cabinet
 base: core20
 confinement: strict
 grade: stable
-
-plugs:
-  read-config:
-    interface: personal-files
-    read:
-      - $HOME/ROIN/config.txt
 
 apps:
   daemon:
@@ -24,7 +18,6 @@ apps:
       -  opengl
       -  wayland
       -  network
-      -  read-config
 
   roin-video:
     command-chain:
@@ -34,10 +27,9 @@ apps:
       -  opengl
       -  wayland
       -  network
-      -  read-config
 
-  nano:
-    command: bin/nano
+  config:
+    command: bin/nano bin/config.txt
 
 
 layout:
