@@ -1,5 +1,5 @@
 name: roin-video
-version: '1.01.01'
+version: '1.01.02'
 summary: Remote control Roin video
 description: Allows you to remotely watch video from the Roin through the control cabinet
 base: core20
