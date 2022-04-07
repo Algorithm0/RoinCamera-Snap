@@ -10,4 +10,4 @@ export QT_QPA_PLATFORM=wayland
 export XKB_CONFIG_ROOT="$BASE_DIR"/usr/share/X11/xkb
 export XLOCALEDIR="$BASE_DIR"/usr/share/X11/locale
 
-"$BASE_DIR/bin/Qml4RTSP" "$@"
+"$BASE_DIR/bin/RoinCamera" "$@"
