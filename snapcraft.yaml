@@ -1,6 +1,6 @@
 name: roin-camera
-version: '1.01.02'
-summary: Remote control Roin video
+version: '1.22.04'
+summary: Remote control Roin camera
 description: Allows you to remotely watch video from the Roin through the control cabinet
 base: core20
 confinement: strict
@@ -72,7 +72,7 @@ parts:
     plugin: dump
     source: ./bin/${SNAPCRAFT_ARCH_TRIPLET}
     organize:
-      Qml4RTSP: bin/Qml4RTSP
+      RoinCamera: bin/RoinCamera
       
   run-scripts:
     plugin: dump
@@ -92,13 +92,7 @@ parts:
       #gsteamer
       - gstreamer1.0-rtsp
       - gstreamer1.0-plugins-bad
-      # - gstreamer1.0-pulseaudio
-      # - gstreamer1.0-gtk3
       - gstreamer1.0-libav
-      # - gstreamer1.0-plugins-bad-videoparsers
-      # - gstreamer1.0-tools
-      # - libgstreamer1.0-0
-      # - libgstreamer1.0-dev
       #qt5     
       - qt5-default
       - qtdeclarative5-dev
@@ -110,7 +104,7 @@ parts:
   get-run-rules:
     plugin: nil
     override-prime: |
-      chmod +x $SNAPCRAFT_PRIME/bin/Qml4RTSP
+      chmod +x $SNAPCRAFT_PRIME/bin/RoinCamera
       chmod +x $SNAPCRAFT_PRIME/bin/run.sh
     after:
       - myprog
